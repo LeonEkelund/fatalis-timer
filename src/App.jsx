@@ -1,5 +1,5 @@
-import Navbar from "./components/Navbar";
-import Timer from "./components/Timer";
+import Navbar from "./components/navbar";
+import Timer from "./components/timer";
 
 export default function App() {
   return (
