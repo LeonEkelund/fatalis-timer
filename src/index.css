@@ -16,6 +16,11 @@
   --button-text: var(--text);
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 
 /* Apply defaults */
 @layer base {

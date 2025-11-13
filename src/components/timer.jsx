@@ -182,6 +182,7 @@ export default function Timer({ workMin = 25, breakMin = 5, autoSwitch = true })
       {/* Shortcuts legend */}
       <div
         className="
+         hidden sm:flex
           rounded-2xl px-3 py-3 w-[340px]
           bg-[var(--surface)]
           border border-[var(--border)]

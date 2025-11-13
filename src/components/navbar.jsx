@@ -1,16 +1,18 @@
 import fatalisLogo from "../assets/fatalislogo.svg";
+import HamburgerMenu from "./hamburgermenu";
 
 export default function Navbar() {
   return (
     // Floating wrapper that centers the card at the top
-    <div className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-full flex justify-center pointer-events-none">
+    <div className="fixed inset-x-0 top-6 z-50 flex justify-center pointer-events-none">
       <nav
         className="
           pointer-events-auto
-          flex items-center justify-between gap-6
-          px-6 py-3
+          flex items-center justify-between gap-4
+          px-4 sm:px-6 py-3
           rounded-2xl
-          max-w-4xl w-[92vw]
+          w-[min(92vw,960px)]
+          bg-white/70
           backdrop-blur-xl
           border border-black/10
           shadow-[0_8px_30px_rgba(0,0,0,0.08)]
@@ -25,20 +27,27 @@ export default function Navbar() {
           />
           <h1
             className="
-    relative text-lg tracking-widest text-[#1a1a1a] font font-extrabold font-sans"
+              relative text-lg tracking-widest text-[#1a1a1a]
+              font-extrabold font-sans
+            "
           >
             FATALIS
           </h1>
         </div>
 
-        {/* Links */}
-        <div className="flex items-center gap-8 text-[15px] font-medium">
-          <a href="#" className="transition-colors duration-300 hover:text-gray-700">
+        {/* Desktop links */}
+        <div className="hidden sm:flex items-center gap-8 text-[15px] font-medium">
+          <a href="#timer" className="transition-colors duration-300 hover:text-gray-700">
             Timer
           </a>
-          <a href="#" className="transition-colors duration-300 hover:text-gray-700">
+          <a href="#download" className="transition-colors duration-300 hover:text-gray-700">
             Download
           </a>
+        </div>
+
+        {/* Mobile hamburger */}
+        <div className="sm:hidden">
+          <HamburgerMenu />
         </div>
       </nav>
     </div>
