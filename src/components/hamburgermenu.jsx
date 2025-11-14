@@ -74,13 +74,11 @@ export default function HamburgerMenu() {
         <div
           className="
             fixed inset-0 z-[40]
-            bg-black/30
-            backdrop-blur-xl
           "
           onClick={close}
         >
           {/* Centered menu card, pushed down slightly */}
-          <div className="flex w-full justify-center items-start pt-32">
+          <div className="flex w-full justify-center items-start pt-20">
             <div
               className="
                 w-[90vw] max-w-sm
