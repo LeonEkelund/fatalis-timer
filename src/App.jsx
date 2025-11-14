@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import LoadingScreen from "./components/LoadingScreen";
-import Navbar from "./components/Navbar";
-import Timer from "./components/Timer";
+import Navbar from "./components/navbar";
+import Timer from "./components/timer";
 
 export default function App() {
   const [progress, setProgress] = useState(0);
