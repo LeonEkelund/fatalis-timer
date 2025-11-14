@@ -8,64 +8,79 @@ export default function HamburgerMenu() {
 
   // Prevent body scroll when menu is open
   useEffect(() => {
-    if (open) {
-      const original = document.body.style.overflow;
-      document.body.style.overflow = "hidden";
-      return () => {
-        document.body.style.overflow = original;
-      };
-    }
+    if (!open) return;
+    const original = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = original;
+    };
   }, [open]);
 
   return (
     <>
-      {/* Simple hamburger icon */}
+      {/* Icon */}
       <button
         type="button"
         onClick={toggle}
         className="
           relative z-[60]
-          flex h-8 w-8 flex-col items-center justify-center
-          gap-1.5
-          transition
+          flex items-center justify-center
+          h-8 w-8
           focus:outline-none
         "
         aria-label={open ? "Close menu" : "Open menu"}
       >
-        <span
-          className={`
-            h-[2px] w-6 rounded-full bg-[#1a1a1a]
-            transition-transform duration-300
-            ${open ? "translate-y-[5px] rotate-45" : ""}
-          `}
-        />
-        <span
-          className={`
-            h-[2px] w-6 rounded-full bg-[#1a1a1a]
-            transition-all duration-200
-            ${open ? "opacity-0" : "opacity-100"}
-          `}
-        />
-        <span
-          className={`
-            h-[2px] w-6 rounded-full bg-[#1a1a1a]
-            transition-transform duration-300
-            ${open ? "-translate-y-[5px] -rotate-45" : ""}
-          `}
-        />
+        <span className="relative block h-5 w-6">
+          {/* Top line */}
+          <span
+            className={`
+              absolute left-0
+              h-[2px] w-full rounded-full bg-[#1a1a1a]
+              transition-all duration-300 ease-out
+              ${open
+                ? "top-1/2 -translate-y-1/2 rotate-45"
+                : "top-0 translate-y-0 rotate-0"}
+            `}
+          />
+
+          {/* Middle line */}
+          <span
+            className={`
+              absolute left-0
+              h-[2px] w-full rounded-full bg-[#1a1a1a]
+              transition-all duration-200 ease-out
+              ${open
+                ? "top-1/2 -translate-y-1/2 opacity-0"
+                : "top-1/2 -translate-y-1/2 opacity-100"}
+            `}
+          />
+
+          {/* Bottom line */}
+          <span
+            className={`
+              absolute left-0
+              h-[2px] w-full rounded-full bg-[#1a1a1a]
+              transition-all duration-300 ease-out
+              ${open
+                ? "top-1/2 -translate-y-1/2 -rotate-45"
+                : "bottom-0 translate-y-0 rotate-0"}
+            `}
+          />
+        </span>
       </button>
 
-      {/* Full-screen overlay BELOW the navbar */}
+      {/* Full-screen overlay */}
       {open && (
         <div
           className="
             fixed inset-0 z-[40]
-            transition-opacity
+            bg-black/30
+            backdrop-blur-xl
           "
           onClick={close}
         >
-          {/* Push content down so it's clearly visible */}
-          <div className="flex w-full justify-center items-start pt-25">
+          {/* Centered menu card, pushed down slightly */}
+          <div className="flex w-full justify-center items-start pt-32">
             <div
               className="
                 w-[90vw] max-w-sm
