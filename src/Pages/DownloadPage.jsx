@@ -18,7 +18,7 @@ export default function DownloadPage() {
       </a>
 
       <p className="text-xs py-1.5 text-gray-400 mt-2">
-        Version 1.0.0 — Windows Installer — ~5 MB
+        Version 1.0.0 — Windows Installer — ~190MB
       </p>
     </div>
   );
