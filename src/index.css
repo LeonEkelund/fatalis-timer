@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+/* Fatalis global design tokens */
+@theme {
+
+  --surface: #ffffff;
+  --text: #1a1a1a;
+  --muted: #6b6b6b;
+
+
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+
+/* Apply defaults */
+@layer base {
+  html {
+    color: var(--text);
+    font-family: var(--font-sans);
+  }
+
+  button:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  kbd:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+
+  button:focus,
+  button:focus-visible,
+  button:active {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+  /* Firefox removes the inner dotted focus */
+  button::-moz-focus-inner {
+    border: 0;
+  }
+
+  /* Optional: remove tap highlight on mobile */
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
