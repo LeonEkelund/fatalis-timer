@@ -4,7 +4,7 @@ export default function DownloadPage() {
       <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight leading-[1.15] text-[var(--text)] text-center">Download fatalis timer</h1>
 
       <a
-        href="/fatalis-timer-setup.exe"
+        href="https://github.com/LeonEkelund/fatalis-timer/releases/download/v1.0.0/Fatalis.Timer.Setup.1.0.0.exe"
         download
         className="mt-10 inline-flex justify-center
             px-6 py-3 rounded-full
